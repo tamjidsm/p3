@@ -53,8 +53,10 @@ Route::post('/users', function() {
 
 
 $input =  Input::get('count');
-$faker = Faker\Factory::create();
-echo $faker->name;
+for ($i=0; $i <$input; $i++) {
+	$faker = Faker\Factory::create();
+	echo $faker->name;
+}
 
 
 //      $input =  Input::get('count');
