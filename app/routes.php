@@ -33,11 +33,17 @@ Route::get('/words', function()
 Route::post('/words', function() {
 
      $input =  Input::get('count');
-        // $input =  Input::all();
-    // print_r($input);
+
+if ( is_numeric($input)){
+
     $generator = new Badcow\LoremIpsum\Generator();
  $paragraphs = $generator->getParagraphs($input);
  echo implode('<p>', $paragraphs);
+}
+else {
+			echo '<h2 style="color: red;">Keep numeric into "Para number" field, Alphabet or null will warn you!
+			</br> Click GO BACK and try again!! </h2>';
+}	
     });
 
 
@@ -50,7 +56,7 @@ Route::get('/users', function()
 
 
 Route::post('/users', function() {
-@include('view.users');
+// @include('view.users');	
 if (isset($_POST['address'])){
 		$address= true;
 	}
@@ -60,7 +66,9 @@ if (isset($_POST['address'])){
 
 // $users =[];
 $input =  Input::get('count');
-// echo $input;
+if ( is_numeric($input)){
+
+	// echo $input;
 for ($i=0; $i <$input; $i++) {
 	$faker = Faker\Factory::create();
 	$user= $faker->name;
@@ -77,7 +85,13 @@ for ($i=0; $i <$input; $i++) {
 	echo '<br>';
 	// array_push ($users, $user);
 	// echo implode('<br>'.' ', $user);
-};
+}
+
+	}	
+else {
+			echo '<h2 style="color: red;">Keep numeric into "User number" field, Alphabet or null will warn you!
+			</br> Click GO BACK and try again!! </h2>';}	
+
 // echo $faker->region; 
 
  // $generator = Faker\Factory::create();

@@ -16,9 +16,9 @@
 <label name="address">Address</label>
 <input type="checkbox" name="address" value="address"/><br /><br />
 
-<input type="submit" name="submit" value="submit"> 
+<input type="submit" name="submit" value="Generate Users"> 
 
 </form>
-
+<p>Note: After generating users, Click on BACK button in the browser to return to this page</p>
 </body>
 </html>

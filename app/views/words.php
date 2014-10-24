@@ -11,11 +11,13 @@
 
   <form method="POST" action="/words">
 
-<label name="count">Para</label>
+<label name="count">Number of Paragraph</label>
 <input type="text" name="count" value=""/><br /><br/>
 
-<input type="submit" name="submit" value="submit">
-
+<input type="submit" name="submit" value="Generate Para">
 </form>
+
+<p>Note: After generating para. Click on BACK button in the browser to return to this page</p>
+
 </body>
 </html>
