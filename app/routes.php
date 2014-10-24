@@ -50,11 +50,42 @@ Route::get('/users', function()
 
 
 Route::post('/users', function() {
+@include('view.users');
+if (isset($_POST['address'])){
+		$address= true;
+	}
+	else {
+		$address= false;
+	};
 
-
+// $users =[];
 $input =  Input::get('count');
-$faker = Faker\Factory::create();
-echo $faker->name;
+// echo $input;
+for ($i=0; $i <$input; $i++) {
+	$faker = Faker\Factory::create();
+	$user= $faker->name;
+	if ($address){
+		$useraddress= $faker->address;
+	}
+	
+	echo $user;
+	if ($address){
+	echo '<br>';
+	echo $useraddress;
+}
+	echo '<br>';
+	echo '<br>';
+	// array_push ($users, $user);
+	// echo implode('<br>'.' ', $user);
+};
+// echo $faker->region; 
+
+ // $generator = Faker\Factory::create();
+// $populator = new Faker\ORM\Propel\Populator($generator);
+// $populator->addEntity('Author', 5);
+// // $populator->addEntity('Book', 10);
+//  $insertedPKs = $populator->execute();
+
 
 
 //      $input =  Input::get('count');
@@ -92,3 +123,7 @@ Route::post('/new', function() {
  echo implode('<p>', $paragraphs);
     });
 
+Route::get('/word', function()
+{
+	  return View::make('word');
+});

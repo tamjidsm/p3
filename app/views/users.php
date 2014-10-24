@@ -10,12 +10,15 @@
  <p>Create random filler text for your applications.</p>
   <form method="POST" action="/users">
 
-<label name="count">User</label>
+<label name="count">Number of users</label>
 <input type="text" name="count" value=""/><br /><br/>
 
-<input type="submit" name="submit" value="submit">
+<label name="address">Address</label>
+<input type="checkbox" name="address" value="address"/><br /><br />
 
-</form>'
+<input type="submit" name="submit" value="submit"> 
+
+</form>
 
 </body>
 </html>
